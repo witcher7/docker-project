@@ -20,10 +20,10 @@ app.get('/profile-picture', function (req, res) {
   res.end(img, 'binary');
 });
 
-// use when starting application locally
+// use when starting application locally my
 let mongoUrlLocal = "mongodb://admin:password@localhost:27017";
 
-// use when starting application as docker container
+// use when starting application as docker container coinatiner c2  c3 
 let mongoUrlDocker = "mongodb://admin:password@mongodb";
 
 // pass these options to mongo client connect request to avoid DeprecationWarning for current Server Discovery and Monitoring engine
