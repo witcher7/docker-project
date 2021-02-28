@@ -14,7 +14,7 @@ pipeline {
                 
                script{
 
-                   gv =load 'script.groovy'
+                   gv =load "script.groovy"
                }
            }
         }
@@ -31,7 +31,7 @@ pipeline {
         stage("test") {
           when{
                expression {
-                env.BRANCH_NAME =='s.hareere500-dev-patch-50009'  && params.executedTests
+                 params.executedTests
                }
             }
             steps {
