@@ -32,7 +32,7 @@ pipeline {
             
             steps {
                 
-                echo "deploying the application with ${credentials}"
+                echo "deploying the application with ${SERVER_CREDENTIALS}"
             }
         }
     }
