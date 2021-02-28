@@ -1,5 +1,9 @@
 pipeline {
     agent any
+    enviroment {
+        NEW_VERSION = '1.3.0'
+        SERVER_CREDENTIALS = credentials('serverID')
+    }
     
     stages {
        
@@ -12,7 +16,8 @@ pipeline {
             }
             steps {
                 
-                echo 'building the application'
+                echo "building the application ${NEW_VERSION}"
+                  echo 'building the application ${NEW_VERSION}'
            }
         }
         stage("test") {
@@ -37,6 +42,11 @@ pipeline {
             steps {
                 
                 echo 'deploying the application'
+                echo " deploying with ${SERVER_CREDENTIALS}"
+                withCredentials(usernamePassword(credentials:'serverID'),usernameVariable:USER,passwordVariable:PWD)
+                {
+                   sh "some script ${USER} and §{PWD}"  
+                }
             }
         }
     }
