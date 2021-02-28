@@ -28,7 +28,6 @@ pipeline {
             steps {
                 
                 echo 'testing the application'
-                sh "mvn install"
             }
         }
         stage("deploy") {
