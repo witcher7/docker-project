@@ -2,7 +2,7 @@ pipeline {
     def gv
     agent any
     parameters{
-        choice(name: 'VERSION_NUMBER',choices:['1.1','1.2','2.0','2.2'],description:'version')
+        choice(name: 'VERSION',choices:['1.1','1.2','2.0','2.2'],description:'version')
         booleanParam(name: 'executedTests', defaultValue: true , description: 'executedTests')
     }
     
