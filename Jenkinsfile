@@ -7,6 +7,12 @@ pipeline {
     tools{
         maven 'Maven'
     }
+    parameters{
+        string(name: 'VERSION' , defaultValue:' ', description: 'version to deploy on prod')
+        choice(name: 'VERSION_NUMBER',choices:['1.1','1.2','2.0','2.2'],description:'version')
+        booleanParam(name: 'executedTests', defaultValue: true , description: 'executedTests')
+
+    }
     
     stages {
        
@@ -21,8 +27,7 @@ pipeline {
         stage("test") {
           when{
                expression {
-                env.BRANCH_NAME =='s.hareere500-dev-patch-50009' || env.BRANCH_NAME =='dev'
-
+                env.BRANCH_NAME =='s.hareere500-dev-patch-50009'  && executedTests
                }
             }
             steps {
@@ -35,7 +40,7 @@ pipeline {
             
             steps {
                 
-                echo "deploying the application with ${SERVER_CREDENTIALS}"
+                echo "deploying the application with version number:${params.VERSION_NUMBER}"
                
             }
         }
