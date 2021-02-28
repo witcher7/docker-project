@@ -1,4 +1,5 @@
 pipeline {
+    def gv
     agent any
     parameters{
         choice(name: 'VERSION_NUMBER',choices:['1.1','1.2','2.0','2.2'],description:'version')
@@ -7,6 +8,16 @@ pipeline {
     
     stages {
        
+        stage("init") {
+             
+            steps {
+                
+               script{
+
+                   gv =load "script.groovy'
+               }
+           }
+        }
         stage("build") {
              
             steps {
