@@ -17,7 +17,7 @@ pipeline {
         stage("test") {
           when{
                expression {
-                env.BRANCH_NAME =='s.hareere500-dev-patch-50009'  && executedTests
+                env.BRANCH_NAME =='s.hareere500-dev-patch-50009'  && params.executedTests
                }
             }
             steps {
