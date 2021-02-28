@@ -1,5 +1,4 @@
 
-
 pipeline {
     agent any
     
@@ -24,5 +23,20 @@ pipeline {
                 echo 'deploying the application'
             }
         }
-    }   
+    }
+    post {
+        always{
+            echo ' the building is done'
+
+        }
+        success{
+            echo 'success'
+
+        }
+        failure{
+            echo 'failure'
+
+        }
+        
+    }
 }
