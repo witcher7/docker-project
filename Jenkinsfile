@@ -7,12 +7,7 @@ pipeline {
     stages {
        
         stage("build") {
-              when{
-               expression {
-                env.BRANCH_NAME =='s.hareere500-dev-patch-50009' 
-
-               }
-            }
+             
             steps {
                 
                 echo "building the application ${NEW_VERSION}"
