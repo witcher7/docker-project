@@ -28,7 +28,7 @@ pipeline {
             steps {
                 
                 echo 'testing the application'
-                sh 'mvn install'
+                sh "mvn install"
             }
         }
         stage("deploy") {
@@ -37,16 +37,7 @@ pipeline {
             steps {
                 
                 echo "deploying the application with ${SERVER_CREDENTIALS}"
-                withCredentials([
-                         usernamePassword(
-                        credentials:'af646b69-e51b-4b90-af42-6d6c36103263',
-                        usernameVariable:USER,     
-                        passwordVariable:PWD) 
-                    ]) { 
-
-                        echo "some script ${USER} and ${PWD}"   
-
-                } 
+               
             }
         }
     }
