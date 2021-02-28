@@ -33,7 +33,7 @@ pipeline {
             steps {
                 
                 echo "deploying the application with ${SERVER_CREDENTIALS}"
-                withCredentials(usernamePassword(credentials:'serverID'),                usernameVariable:USER,passwordVariable:PWD) 
+                withCredentials([usernamePassword(credentials:'af646b69-e51b-4b90-af42-6d6c36103263'),usernameVariable:USER,passwordVariable:PWD]) 
 
                 { 
 
