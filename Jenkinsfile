@@ -11,6 +11,10 @@ pipeline {
             steps {
                 script {
                    gv = load "script.groovy" 
+                   nodejs('Node-10.17') {
+                       sh 'node -v'
+                       sh 'yarn -v'
+                   }
                 }
             }
         }
