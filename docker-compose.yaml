@@ -8,11 +8,13 @@ services:
     image: mongo
     ports:
       - 27017:27017
+    # - port_of_host_machine : port_of_container
     environment:
       - MONGO_INITDB_ROOT_USERNAME=admin
       - MONGO_INITDB_ROOT_PASSWORD=password
     volumes:
       - mongo-data:/data/db
+    # - named-volume:/path_on_container
   mongo-express:
     image: mongo-express
     restart: always # fixes MongoNetworkError when mongodb is not ready when mongo-express starts
@@ -23,5 +25,8 @@ services:
       - ME_CONFIG_MONGODB_ADMINPASSWORD=password
       - ME_CONFIG_MONGODB_SERVER=mongodb
 volumes:
+# list of all volumes specified in docker-compose
   mongo-data:
+  # name_of_volume:
     driver: local
+    # instruction to driver of docker to create dir on local machine
