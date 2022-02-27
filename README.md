@@ -31,12 +31,26 @@ Step 4: open mongo-express from browser
 
 Step 5: create `user-account` _db_ and `users` _collection_ in mongo-express
 
-Step 6: Start your nodejs application locally - go to `app` directory of project 
+Step 6: clone the project
+    
+- Clone using  https
+    
+        git clone https://gitlab.com/nanuchi/techworld-js-docker-demo-app.git
+
+- Clone using ssh
+    
+        git clone git@gitlab.com:nanuchi/techworld-js-docker-demo-app.git
+
+Step 7: go to project directory
+    
+    cd techworld-js-docker-demo-app
+
+Step 8: Start your nodejs application locally - go to `app` directory of project 
 
     npm install 
     node server.js
     
-Step 7: Access you nodejs application UI from browser
+Step 9: Access you nodejs application UI from browser
 
     http://localhost:3000
 
