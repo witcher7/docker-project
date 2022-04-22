@@ -16,6 +16,7 @@ pipeline {
         }
         stage("build") {
             steps {
+                echo 'welcome to balu jenkinsfile...'
                 script {
                     gv.buildApp()
                 }
