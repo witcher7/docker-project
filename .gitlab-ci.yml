@@ -1,11 +1,12 @@
-build_image:
+stages:
+    - build docker image
 
-    image: alpine 
+buil image:
+    stage: build docker image
+    image: docker:20.10.12
+    services:
+        - docker:20.10.12-dind
     script:
-        - docker build -t myapp:1.0
-
-    artifacts:
-        paths:
-            - build
-
-            
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker image ls
+        - echo "na me dey here"
