@@ -1,0 +1,12 @@
+stages:
+    - build docker image
+
+buil image:
+    stage: build docker image
+    image: docker:20.10.12
+    services:
+        - docker:20.10.12-dind
+    script:
+        - docker build -t $CI_REGISTRY_IMAGE .
+        - docker image ls
+        - echo "na me dey here"
