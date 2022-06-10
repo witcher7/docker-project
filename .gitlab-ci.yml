@@ -1,0 +1,18 @@
+stages:
+    - build image
+    - test image
+
+artefacts:
+    paths:
+        build
+
+build docker image:
+    image: docker:20.10.12
+    services:
+        - docker:20.10.12-dind
+    stage: build image
+    script:
+        - docker build -t $CI_REGISTRY_NAME .
+        - docker image ls 
+
+
