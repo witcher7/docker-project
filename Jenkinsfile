@@ -17,7 +17,7 @@ pipeline {
 
     stages {
 
-        satge("init) {
+        stage("init") {
 
             steps{
 
