@@ -18,6 +18,7 @@ pipeline {
             steps {
                 script {
                     gv.buildApp()
+                    echo 'how are u'
                 }
             }
         }
