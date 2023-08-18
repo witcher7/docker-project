@@ -11,7 +11,7 @@ pipeline {
         }
         stage("run backend") {
             steps {
-                bat 'executing gradle'
+                bat 'execute gradle'
                 withGradle() {
                     bat './gradlew -v'
                 }
